@@ -10,15 +10,13 @@ class LinkedList:
         self.size = 0
 
     def add_first(self, value):
-        """Добавить в начало"""
-        node = Node(value)
+        node = Node(value) # сделать в начало
         node.next = self.head
         self.head = node
         self.size += 1
 
     def add_last(self, value):
-        """Добавить в конец"""
-        node = Node(value)
+        node = Node(value) # сделать в конец
         if self.head is None:
             self.head = node
         else:
@@ -29,10 +27,9 @@ class LinkedList:
         self.size += 1
 
     def remove(self, value):
-        """Удалить первое вхождение значения. Вернуть True, если удалили"""
         current = self.head
         previous = None
-        while current is not None:
+        while current is not None: # true если вернули
             if current.value == value:
                 if previous is None:
                     self.head = current.next
@@ -45,8 +42,7 @@ class LinkedList:
         return False
 
     def find(self, value):
-        """Есть ли значение в списке"""
-        current = self.head
+        current = self.head 
         while current is not None:
             if current.value == value:
                 return True

@@ -12,8 +12,7 @@ class Deque:
         self.size = 0
 
     def push_front(self, value):
-        """Добавить в начало"""
-        node = Node(value)
+        node = Node(value) # добавит в начало
         if self.head is None:
             self.head = node
             self.tail = node
@@ -24,8 +23,7 @@ class Deque:
         self.size += 1
 
     def push_back(self, value):
-        """Добавить в конец"""
-        node = Node(value)
+        node = Node(value) # добавит в конце
         if self.tail is None:
             self.head = node
             self.tail = node
@@ -36,9 +34,8 @@ class Deque:
         self.size += 1
 
     def pop_front(self):
-        """Забрать элемент из начала"""
         if self.head is None:
-            raise IndexError("Дек пустой")
+            raise IndexError("Дек пустой") # получить элемент из начала
         value = self.head.value
         self.head = self.head.next
         if self.head is None:
@@ -49,9 +46,8 @@ class Deque:
         return value
 
     def pop_back(self):
-        """Забрать элемент из конца"""
         if self.tail is None:
-            raise IndexError("Дек пустой")
+            raise IndexError("Дек пустой") # получить элемент из конца
         value = self.tail.value
         self.tail = self.tail.prev
         if self.tail is None:
@@ -62,22 +58,19 @@ class Deque:
         return value
 
     def peek_front(self):
-        """Посмотреть первый элемент, не удаляя"""
         if self.head is None:
-            raise IndexError("Дек пустой")
+            raise IndexError("Дек пустой") # посмотреть 1 элмент
         return self.head.value
 
     def peek_back(self):
-        """Посмотреть последний элемент, не удаляя"""
         if self.tail is None:
-            raise IndexError("Дек пустой")
-        return self.tail.value
+            raise IndexError("Дек пустой") 
+        return self.tail.value # посмотреть последний элмент
 
     def is_empty(self):
         return self.size == 0
 
     def to_list(self):
-        """Превратить в обычный список (удобно для тестов)"""
         result = []
         current = self.head
         while current is not None:

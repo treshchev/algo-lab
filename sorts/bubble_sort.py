@@ -1,5 +1,4 @@
-def bubble_sort(arr):
-    """Сортировка пузырьком. Возвращает новый отсортированный список."""
+def bubble_sort(arr): # сортировка пузырьком
     result = list(arr)  # копия, чтобы не портить исходный список
     n = len(result)
     for i in range(n - 1):
